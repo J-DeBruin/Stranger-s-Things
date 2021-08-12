@@ -5,3 +5,10 @@
     "reactdom": "^2.0.0"
   }
 }
+
+{
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "reat-scripts build"
+  }
+}
