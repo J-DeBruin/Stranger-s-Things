@@ -1,6 +1,7 @@
-import React from 'React';
-import { ReactDOM } from 'React';
-import BASE_URL from 'api/index.js'; 
+import React from 'react';
+import ReactDOM from 'react-dom';
+import BASE_URL from './api/index';
+import Login from './components/Login'; 
 
 const user = {
     "username": "charliejustin",
@@ -13,7 +14,8 @@ const App = () => {
             const response = await fetch(`${BASE_URL}/api/2105-OKU-RM-WEB-PT/posts`, {
                 method: "POST",
                 header: {
-                    "Content-Type" : "application/json"
+                    "Content-Type" : "application/json",
+                    'Authorization': 'SHA256:NfHOe+4/AAeQpjhK/8/G7yAyybqEc9dTV++BUeE59b8'
                 },
                 body: JSON.stringify(user)
             });
@@ -23,7 +25,7 @@ const App = () => {
             console.error(error);
         }
     }
+    return (<div><Login /></div>)
 }
-
-App();
-ReactDOM.render(<App />,document.getElementByID("app"))
+export default App;
+ReactDOM.render(<App />,document.getElementById("app"))

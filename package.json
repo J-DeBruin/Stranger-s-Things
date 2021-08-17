@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
     "reactdom": "^2.0.0"
   },
@@ -12,7 +14,6 @@
   "description": "",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/J-DeBruin/Stranger-s-Things.git"
@@ -23,7 +24,6 @@
   "bugs": {
     "url": "https://github.com/J-DeBruin/Stranger-s-Things/issues"
   },
-  "homepage": "https://github.com/J-DeBruin/Stranger-s-Things#readme",
   "browserslist": {
     "production": [
       ">0.2%",
