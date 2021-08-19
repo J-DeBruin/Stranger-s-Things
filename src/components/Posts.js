@@ -19,10 +19,10 @@ const Posts = ({postList, setPostList}) => {
 
 const postElement = postList.map((post) => {
     <div>
-    <h1>{post.description}</h1>
-    <h1>Hello</h1>
+        <h1>{post.description}</h1>
+        <h1>Hello</h1>
     </div>
-    })
+})
 
     return <div>{postElement}</div>
 }
