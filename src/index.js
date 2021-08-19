@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import BASE_URL from './api/index';
-import Login from './components/Login'; 
+import Login from './components/Login';
+import Posts from './components/Posts';
+
 
 const user = {
     "username": "charliejustin",
@@ -9,6 +11,8 @@ const user = {
 }
 
 const App = () => {
+    const [postList, setPostList] = useState([]);
+    // useEffect({}, [postList]);
     async function getToken() {
         try {
             const response = await fetch(`${BASE_URL}/api/2105-OKU-RM-WEB-PT/posts`, {
@@ -25,7 +29,7 @@ const App = () => {
             console.error(error);
         }
     }
-    return (<div><Login /></div>)
+    return (<div><Login /><Posts postList = {postList} setPostList = {setPostList} /></div>)
 }
 export default App;
 ReactDOM.render(<App />,document.getElementById("app"))
