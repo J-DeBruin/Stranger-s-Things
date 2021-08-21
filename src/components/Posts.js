@@ -17,12 +17,12 @@ const Posts = ({postList, setPostList}) => {
 
     console.log(postList);
 
-const postElement = postList.map((post) => {
+const postElement = postList.map((post) => 
     <div>
         <h1>{post.description}</h1>
         <h1>Hello</h1>
     </div>
-})
+)
 
     return <div>{postElement}</div>
 }
