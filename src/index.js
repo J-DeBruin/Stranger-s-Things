@@ -8,6 +8,7 @@ import {
 import Login from './components/Login';
 import Posts from './components/Posts';
 import Header from './components/Header';
+import Register from './components/Register';
 
 import TokenUtilities from './utilities/token';
 
@@ -37,7 +38,7 @@ const App = () => {
                 body: JSON.stringify(user)
             });
             const data = await response.json;
-            console.log(data)
+            // console.log(data)
         } catch (error) {
             console.error(error);
         }
@@ -46,9 +47,17 @@ const App = () => {
     return (
         <>
             <Header isLoggedIn={isLoggedIn} setToken={setToken} />
+            <Switch>
+                <Route path="/posts"><Posts /></Route>
+                <Route path="/login"><Login setToken={setToken} /></Route>
+                <Route path="/profile"><Profile /></Route>
+                <Route exact path="/"><Home /></Route>
+            </Switch>
             <main>
-                <Login />
-                <Posts />
+                <Switch>
+                    <Route path="/login"><Login setToken={setToken} /></Route>
+                    <Route path="/posts"><Posts /></Route>
+                </Switch>
             </main>
         </>
     )

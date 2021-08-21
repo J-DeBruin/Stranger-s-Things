@@ -20,11 +20,12 @@ const Header = ({isLoggedIn, setToken}) => {
             {
                 isLoggedIn ?
                     <>
-                        <Link to="/drinks">Drinks</Link>
+                        <Link to="/posts"><Posts /></Link>
+                        <Link to="/profile"><Profile /></Link>
+                        <Link to="/"><Home /></Link>
                         <button onClick={handleLogout}>Logout</button>
                     </> :
                     <>
-                        <div></div>
                         <Link to="/login">
                             <button>Login</button>
                         </Link>

@@ -1,27 +1,44 @@
+//After a successful login, website takes you to Profile, where messages are shown:
+// In Profile:
+//      There's a personalized welcome message
+//      "Messages to Me:"
+//      populated messages sent to user from different users (probably using map function?)
+//      An alert that says "Success: Succesfully logged in!"
+//      "Messages from Me:"
+//      populated messages sent from user to different users (probably using map function?)
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
-const BASE_URL = 'https://strangers-things.herokuapp.com';
+import API from '../utilites/api';
+import TokenUtilities from '../utilities/token';
 
-const Login = () => {
-    const BASE_URL = 'https://strangers-things.herokuapp.com/api/';
+// const BASE_URL = 'https://strangers-things.herokuapp.com';
+
+const Login = ({setToken}) => {
+    let history = useHistory();
+    // const BASE_URL = 'https://strangers-things.herokuapp.com/api/';
     const [user, setUser] = useState({username: '', password: ''});
 
     async function storeToken() {
         try {
-            const response = await fetch(`${BASE_URL}/login`, {
-                method: 'POST',
-                header: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({user: user})
-            });
-            const data = await response.json();
+            // const response = await fetch(`${BASE_URL}/login`, {
+            //     method: 'POST',
+            //     header: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify({user: user})
+            // });
+            // const data = await response.json();
             //replace 'vb-token'
-            console.log(data);
-            localStorage.setItem('vb-token', data.token);
+            const data = await API.makeRequest('/login', 'POST', user);
+            TokenUtilities.setToken(data.token);
+            setToken(data.token);
+            // console.log(data);
+            // localStorage.setItem('vb-token', data.token);
         } catch (error) {
-            console.error(error);
+            alert(error);
+        } finally {
+            history.push("/");
         }
     }
 
@@ -43,9 +60,6 @@ const Login = () => {
         window.location.href = "/login";
     }
 
-    const isLoggedIn = () => {
-
-    }
 
     return (
         <div>

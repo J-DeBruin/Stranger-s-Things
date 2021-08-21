@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "CHOKIDAR_USEPOLLING=true react-scripts start",
-    "build": "reat-scripts build"
+    "build": "react-scripts build"
   },
   "name": "strangers_things",
   "description": "",
