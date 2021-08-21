@@ -7,7 +7,7 @@
     "reactdom": "^2.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "CHOKIDAR_USEPOLLING=true react-scripts start",
     "build": "reat-scripts build"
   },
   "name": "strangers_things",

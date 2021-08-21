@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import API from '../utilities/api';
 
-const BASE_URL = 'https://strangers-things.herokuapp.com';
 
-const Posts = ({postList, setPostList}) => {
+const Posts = () => {
+
+    const [postList, setPostList] = useState([]); 
+
     useEffect( async function () {
         try {
             const data = await API.makeRequest(`/api/2105-OKU-RM-WEB-PT/posts`, 'GET');
@@ -17,14 +19,18 @@ const Posts = ({postList, setPostList}) => {
 
     console.log(postList);
 
-const postElement = postList.map((post) => {
-    <div>
-        <h1>{post.description}</h1>
-        <h1>Hello</h1>
-    </div>
-})
+    const postElement = postList.map((post) => 
+        <div>
+            <h1>Title: {post.title}</h1>
+            <h2>Description: {post.description}</h2>
+        </div>
+    )
 
-    return <div>{postElement}</div>
+    return (
+        <div>
+            {postElement}
+        </div>
+    )
 }
 
 export default Posts;

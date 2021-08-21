@@ -1,4 +1,3 @@
-28
 const TOKEN_KEY = 'vb-token';
 
 export default {

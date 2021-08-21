@@ -49,8 +49,8 @@ const Login = () => {
 
     return (
         <div>
-            {/* <Link to='/'>Virtual Bartender</Link> */}
-            <form onSubmit={(event) => {handleSubmit}}>
+            <Link to='/'>Stranger Things</Link>
+            <form onSubmit={handleSubmit}>
                 <input type='text'
                         required
                         name='username'

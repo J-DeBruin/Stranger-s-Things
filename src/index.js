@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import BASE_URL from './api/index';
+import {
+    BrowserRouter,
+    Route,
+    Switch
+} from 'react-router-dom';
 import Login from './components/Login';
 import Posts from './components/Posts';
+import Header from './components/Header';
+
+import TokenUtilities from './utilities/token';
 
 const user = {
     "username": "charliejustin",
@@ -10,7 +17,15 @@ const user = {
 }
 
 const App = () => {
-    const [postList, setPostList] = useState([]);
+    // const [postList, setPostList] = useState([]);
+    const [token, setToken] = useState(TokenUtilities.getToken());
+    const [isLoggedIn, setIsLoggedIn] = useState(!!token);
+
+    useEffect(function() {
+        setIsLoggedIn(!!token);
+    }, [token]);
+
+    
     async function getToken() {
         try {
             const response = await fetch(`${BASE_URL}/api/2105-OKU-RM-WEB-PT/posts`, {
@@ -27,8 +42,17 @@ const App = () => {
             console.error(error);
         }
     }
-    return (<div><Login /><Posts postList = {postList} setPostList = {setPostList} /></div>)
+
+    return (
+        <>
+            <Header isLoggedIn={isLoggedIn} setToken={setToken} />
+            <main>
+                <Login />
+                <Posts />
+            </main>
+        </>
+    )
 }
 
 export default App;
-ReactDOM.render(<App />,document.getElementById("app"))
+ReactDOM.render(<BrowserRouter><App /></BrowserRouter>,document.getElementById("app"))
