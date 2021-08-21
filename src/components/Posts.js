@@ -1,3 +1,6 @@
+// This will show all the Posts
+// Contains Header, POSTS, followed by text posts, search input, and basic link for Add Post
+// then it populates all the different posts
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import API from '../utilities/api';
