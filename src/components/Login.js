@@ -55,13 +55,13 @@ const Login = ({setToken}) => {
         console.log(user, setUser)
     }
 
-    const LogOut = () => {
-        localStorage.clear();
-        window.location.href = "/";
-    }
+    // const LogOut = () => {
+    //     localStorage.clear();
+    //     window.location.href = "/Login";
+    // }
 
     return (
-        <div>
+        <div className="login">
             {/* <Link to='/'>Strangers Things</Link> */}
             <form onSubmit={handleSubmit}>
                 <input type='text'

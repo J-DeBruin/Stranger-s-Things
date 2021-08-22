@@ -4,6 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import API from '../utilities/api';
+import Post from './Post';
 
 
 const Posts = () => {
@@ -12,7 +13,7 @@ const Posts = () => {
 
     useEffect( async function () {
         try {
-            const data = await API.makeRequest(`/api/2105-OKU-RM-WEB-PT/posts`, 'GET');
+            const data = await API.makeRequest(`/posts`, 'GET');
             console.log(data);
             setPostList(data.data.posts);
         } catch (error) {
@@ -29,7 +30,8 @@ const Posts = () => {
                                                         location={post.location} 
                                                         id={post._id}
                                                         key={`post-${i}`}
-                                                        updatePostList={updatePostList} />);
+                                                        // updatePostList={updatePostList} 
+                                                        />);
 
     return (
         <div id="post-container">

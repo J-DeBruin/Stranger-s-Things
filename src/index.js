@@ -48,13 +48,13 @@ const App = () => {
     return (
         <div>
         <Header isLoggedIn={isLoggedIn} setToken={setToken} />
-        <nav className='navBar'>
-                <Link to="/Home">HOME</Link>
-                <Link to="/Posts">POSTS</Link>
-                <Link to="/Profile">PROFILE</Link>
+        {/* <nav className='navBar'> */}
+                {/* <Link to="/Home">HOME</Link> */}
+                {/* <Link to="/Posts">POSTS</Link> */}
+                {/* <Link to="/Profile">PROFILE</Link> */}
                 {/* <Link to="/Register2">REGISTER</Link> */}
                 {/* <Link to="/Login">LOGIN</Link> */}
-        </nav>
+        {/* </nav> */}
         <main>
             <Switch>
             <Route exact path="/Login"><Login setToken={setToken} /></Route>

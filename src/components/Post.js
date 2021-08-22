@@ -2,6 +2,8 @@ import React from 'react';
 import API from '../utilities/api';
 
 const Post = ({title, description, price, seller, location, id, key, updatePostList }) => {
+
+    // const [update]
     return (
         <div className="post">
             <div>
@@ -14,3 +16,5 @@ const Post = ({title, description, price, seller, location, id, key, updatePostL
         </div>
     )
 }
+
+export default Post

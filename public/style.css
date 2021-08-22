@@ -1,6 +1,13 @@
-#app {
+header {
   background-color:  rgb(11, 61, 69);
 }
+
+/* header {
+  font-family: "proxima-nova-1","proxima-nova-2","Montserrat",Helvetica,sans-serif;  text-align: center;
+  color: #fff;
+  text-decoration: underline;
+  font-size: 2em;
+} */
 
 header h1 {
   font-family: "proxima-nova-1","proxima-nova-2","Montserrat",Helvetica,sans-serif;  text-align: center;
@@ -30,8 +37,8 @@ nav a {
   display: inline-block;
 }
 
-main h1 {
-  color: white;
+div main {
+  /* color: white; */
   margin: 0.1em 1em;
-  font-size: 4em;
+  /* font-size: 4em; */
 }
