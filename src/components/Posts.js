@@ -20,17 +20,19 @@ const Posts = () => {
         }
     }, []);
 
-    console.log(postList);
+    // function updatePostList(data) {}
 
-    const postElement = postList.map((post) => 
-        <div>
-            <h1>Title: {post.title}</h1>
-            <h2>Description: {post.description}</h2>
-        </div>
-    )
+    const postElement = postList.map((post, i) => <Post title={post.title}
+                                                        description={post.description}
+                                                        price={post.price}
+                                                        seller={post.author.username}
+                                                        location={post.location} 
+                                                        id={post._id}
+                                                        key={`post-${i}`}
+                                                        updatePostList={updatePostList} />);
 
     return (
-        <div>
+        <div id="post-container">
             {postElement}
         </div>
     )
