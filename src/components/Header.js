@@ -27,8 +27,8 @@ const Header = ({isLoggedIn, setToken}) => {
                 isLoggedIn ?
                     <>
                         <Link to="/Posts"><Posts /></Link>
-                        {/* <Link to="/profile"><Profile /></Link> */}
-                        <Link to="/"><Home /></Link>
+                        {/* <Link to="/profile"><Profile /><h1>Welcome {user}</h1></Link> */}
+                        <Link to="/Home"><Home /></Link>
                         <button onClick={handleLogout}>Logout</button>
                     </> :
                     <>

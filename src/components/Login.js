@@ -38,7 +38,7 @@ const Login = ({setToken}) => {
         } catch (error) {
             console.log(error);
         } finally {
-            history.push("/");
+            history.push("/Home");
         }
     }
 
@@ -59,7 +59,6 @@ const Login = ({setToken}) => {
         localStorage.clear();
         window.location.href = "/";
     }
-
 
     return (
         <div>

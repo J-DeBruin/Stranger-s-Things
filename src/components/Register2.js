@@ -9,7 +9,8 @@ const Register = ({setToken}) => {
     const [user, setUser] = useState({username: '', password: ''});
     async function storeToken() {
         try {
-            const data = await API.makeRequest('/users/Register2', 'POST', {user});
+            const data = await API.makeRequest('/users/register', 'POST', {user});
+            console.log(data);
             TokenUtilities.setToken(data.token);
             setToken(data.token);
         } catch (error) {
@@ -53,7 +54,7 @@ const Register = ({setToken}) => {
                         value={user.password}
                         onChange={handleInput}
                         placeholder='password-confirmation'></input>
-                <button>Submit</button>
+                <button>Register</button>
             </form>
         </div>
     )
