@@ -3,7 +3,12 @@
 //When logged in, buttons are: Home, Posts, Profile, Logout
 import React, { useState } from 'react';
 import { Route, Link } from 'react-router-dom';
-import TokenUtilities from '../utilities/token'
+import TokenUtilities from '../utilities/token';
+import Posts from './Posts';
+// import Profile from './Profile';
+import Home from './Home';
+import Login from './Login';
+import Register from './Register2';
 
 const Header = ({isLoggedIn, setToken}) => {
     function handleLogout(e) {
@@ -14,20 +19,24 @@ const Header = ({isLoggedIn, setToken}) => {
 
     return (
         <header>
-            <Link to="/">
-                <h3>Stranger Things</h3>
-            </Link>
+            <h1>Strangers Things</h1>
+            {/* <Link to="/">
+                <h3>Strangers Things</h3>
+            </Link> */}
             {
                 isLoggedIn ?
                     <>
-                        <Link to="/posts"><Posts /></Link>
-                        <Link to="/profile"><Profile /></Link>
+                        <Link to="/Posts"><Posts /></Link>
+                        {/* <Link to="/profile"><Profile /></Link> */}
                         <Link to="/"><Home /></Link>
                         <button onClick={handleLogout}>Logout</button>
                     </> :
                     <>
-                        <Link to="/login">
-                            <button>Login</button>
+                        <Link to="/Login">
+                            <button>Log in</button>
+                        </Link>
+                        <Link to="/Register2">
+                            <button>Register</button>
                         </Link>
                     </>
             }

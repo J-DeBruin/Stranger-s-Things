@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import {
     BrowserRouter,
     Route,
-    Switch
+    Switch,
+    Link
 } from 'react-router-dom';
+import Home from './components/Home';
 import Login from './components/Login';
 import Posts from './components/Posts';
 import Header from './components/Header';
-import Register from './components/Register';
+import Register from './components/Register2';
 
 import TokenUtilities from './utilities/token';
 
@@ -46,7 +48,29 @@ const App = () => {
 
     return (
         <>
-            <Header isLoggedIn={isLoggedIn} setToken={setToken} />
+        <Header isLoggedIn={isLoggedIn} setToken={setToken} />
+        <nav className='navBar'>
+                <Link to="/Home">HOME</Link>
+                <Link to="/Posts">POSTS</Link>
+                <Link to="/Profile">PROFILE</Link>
+                <Link to="/Register">REGISTER</Link>
+                {/* <Link to="/Login">LOGIN</Link> */}
+        </nav>
+        <main>
+            <Switch>
+                <Route path="/Login"><Login setToken={setToken} /></Route>
+                    <h1>Login</h1>
+                <Route path="/Posts"><Posts /></Route>
+                    <h1>Posts</h1>
+                <Route path="/Register2"><Register setToken={setToken} /></Route>
+                    <h1>Register</h1>
+                {/* <Route path="/Profile"><Profile /></Route>
+                    <h1>Profile</h1> */}
+                <Route path="/Home"><Home /></Route>
+                    <h1>Welcome to our Home Page!</h1>
+            </Switch>
+        </main>
+            {/* <Header isLoggedIn={isLoggedIn} setToken={setToken} />
             <Switch>
                 <Route path="/posts"><Posts /></Route>
                 <Route path="/login"><Login setToken={setToken} /></Route>
@@ -57,8 +81,8 @@ const App = () => {
                 <Switch>
                     <Route path="/login"><Login setToken={setToken} /></Route>
                     <Route path="/posts"><Posts /></Route>
-                </Switch>
-            </main>
+                </Switch> */}
+            {/* </main> */}
         </>
     )
 }

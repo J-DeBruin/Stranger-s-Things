@@ -1,4 +1,4 @@
-const BASE_URL = 'https://strangers-things.herokuapp.com';
+const BASE_URL = 'https://strangers-things.herokuapp.com/api/2105-OKU-RM-WEB-PT';
 
 import TokenUtilities from './token';
 
@@ -20,6 +20,7 @@ export default {
         }
         const response = await fetch(BASE_URL + path, options);
         const responseData = await response.json();
+        console.log(responseData);
         return responseData;
     }
 }

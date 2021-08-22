@@ -9,7 +9,7 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
-import API from '../utilites/api';
+import API from '../utilities/api';
 import TokenUtilities from '../utilities/token';
 
 // const BASE_URL = 'https://strangers-things.herokuapp.com';
@@ -30,13 +30,13 @@ const Login = ({setToken}) => {
             // });
             // const data = await response.json();
             //replace 'vb-token'
-            const data = await API.makeRequest('/login', 'POST', user);
+            const data = await API.makeRequest('/users/login', 'POST', {user});
             TokenUtilities.setToken(data.token);
             setToken(data.token);
             // console.log(data);
             // localStorage.setItem('vb-token', data.token);
         } catch (error) {
-            alert(error);
+            console.log(error);
         } finally {
             history.push("/");
         }
@@ -57,13 +57,13 @@ const Login = ({setToken}) => {
 
     const LogOut = () => {
         localStorage.clear();
-        window.location.href = "/login";
+        window.location.href = "/";
     }
 
 
     return (
         <div>
-            <Link to='/'>Stranger Things</Link>
+            {/* <Link to='/'>Strangers Things</Link> */}
             <form onSubmit={handleSubmit}>
                 <input type='text'
                         required
