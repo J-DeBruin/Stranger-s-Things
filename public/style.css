@@ -46,3 +46,12 @@ div main {
 .post {
   border-bottom: solid;
 }
+
+.edit {
+  color: red;
+  
+}
+
+.delete {
+  color: purple;
+}

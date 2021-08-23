@@ -30,9 +30,10 @@ const Login = ({setToken}) => {
             // const data = await response.json();
             //replace 'vb-token'
             const data = await API.makeRequest('/users/login', 'POST', {user});
-            TokenUtilities.setToken(data.token);
-            setToken(data.token);
-            console.log(data);
+            TokenUtilities.setToken(data.data.token);
+            setToken(data.data.token);
+            console.log(data.data.token);
+            console.log(data.token);
             // localStorage.setItem('vb-token', data.token);
         } catch (error) {
             console.log(error);

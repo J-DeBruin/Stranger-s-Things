@@ -60,9 +60,9 @@ const App = () => {
             <Switch>
             <Route exact path="/Login"><Login setToken={setToken} /></Route>
             <Route exact path="/Register2"><Register setToken={setToken} /></Route>      
-            <Route exact path="/Posts"><Posts /></Route>
+            <Route exact path="/Posts"><Posts setToken={setToken} /></Route>
             <Route exact path="/Home"><Home /></Route>
-            <Route exact path="/Posts/Add"><AddPost /></Route>   
+            <Route exact path="/Posts/Add"><AddPost setToken={setToken} /></Route>   
             {/* <Route path="/Profile"><Profile /></Route>
                     <h1>Profile</h1> */}                  
             </Switch>

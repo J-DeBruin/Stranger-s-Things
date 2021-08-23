@@ -16,12 +16,12 @@ const Post = ({title, description, price, seller, location, id, updatePostList }
             </div>
             <div className="">
                 <>
-                    <button>Edit</button>
-                    <button>Delete</button>
+                    <button className="edit">Edit</button>
+                    <button className="delete">Delete</button>
                 </>
             </div>
         </div>
     )
 }
 
-export default Post
+export default Post;
