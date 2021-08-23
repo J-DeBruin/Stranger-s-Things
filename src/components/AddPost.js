@@ -35,7 +35,7 @@ const AddPost = () => {
         //     value = Number(value);
         // }
         
-        newState[stateKey] = value;
+        newState[stateKey] = e.target.value;
         setPost(newState);
         console.log(post);
     }
@@ -44,7 +44,7 @@ const AddPost = () => {
         e.preventDefault();
         // {name, type, amount}
         await API.makeRequest('/posts', 'POST', post);
-        history.push('/posts');
+        history.push('/Posts');
     }
 
     return (
@@ -59,12 +59,12 @@ const AddPost = () => {
                     <input onChange={e => handleChange(e, 'description')} value={post.description} type="text" />
                 </div>
                 <div>
-                    <label>Location:</label>
-                    <input onChange={e => handleChange(e, 'location')} value={post.location} type="text" />
-                </div>
-                <div>
                     <label>Price:</label>
                     <input onChange={e => handleChange(e, 'price')} value={post.price} type="text" />
+                </div>
+                <div>
+                    <label>Location:</label>
+                    <input onChange={e => handleChange(e, 'location')} value={post.location} type="text" />
                 </div>
                 <div>
                     <button>Submit</button>

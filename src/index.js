@@ -13,6 +13,7 @@ import Header from './components/Header';
 import Register from './components/Register2';
 import AddPost from './components/AddPost';
 import TokenUtilities from './utilities/token';
+import EditPost from './components/Edit';
 
 const user = {
     "username": "charliejustin",
@@ -58,11 +59,12 @@ const App = () => {
         {/* </nav> */}
         <main>
             <Switch>
+            <Route exact path="/Posts/add"><AddPost /></Route> 
+            {/* <Route exact path="/Posts/{id}"><EditPost/></Route> */}
             <Route exact path="/Login"><Login setToken={setToken} /></Route>
-            <Route exact path="/Register2"><Register setToken={setToken} /></Route>      
-            <Route exact path="/Posts"><Posts setToken={setToken} /></Route>
+            <Route exact path="/Register2"><Register /></Route>      
+            <Route exact path="/Posts"><Posts  /></Route>
             <Route exact path="/Home"><Home /></Route>
-            <Route exact path="/Posts/Add"><AddPost setToken={setToken} /></Route>   
             {/* <Route path="/Profile"><Profile /></Route>
                     <h1>Profile</h1> */}                  
             </Switch>
