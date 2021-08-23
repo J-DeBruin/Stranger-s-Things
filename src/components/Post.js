@@ -1,9 +1,10 @@
 import React from 'react';
 import API from '../utilities/api';
 
-const Post = ({title, description, price, seller, location, id, key, updatePostList }) => {
+const Post = ({title, description, price, seller, location, id, updatePostList }) => {
 
-    // const [update]
+    // const [updatePost, setUpdatePost] = useState()
+
     return (
         <div className="post">
             <div>
@@ -12,6 +13,12 @@ const Post = ({title, description, price, seller, location, id, key, updatePostL
                 <p>Seller: {seller}</p>
                 <p>Price: {price}</p>
                 <p>Location: {location}</p>
+            </div>
+            <div className="">
+                <>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </>
             </div>
         </div>
     )

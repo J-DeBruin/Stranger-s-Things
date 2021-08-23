@@ -12,11 +12,10 @@ import { Link, useHistory } from 'react-router-dom';
 import API from '../utilities/api';
 import TokenUtilities from '../utilities/token';
 
-// const BASE_URL = 'https://strangers-things.herokuapp.com';
 
 const Login = ({setToken}) => {
     let history = useHistory();
-    // const BASE_URL = 'https://strangers-things.herokuapp.com/api/';
+    
     const [user, setUser] = useState({username: '', password: ''});
 
     async function storeToken() {
@@ -33,7 +32,7 @@ const Login = ({setToken}) => {
             const data = await API.makeRequest('/users/login', 'POST', {user});
             TokenUtilities.setToken(data.token);
             setToken(data.token);
-            // console.log(data);
+            console.log(data);
             // localStorage.setItem('vb-token', data.token);
         } catch (error) {
             console.log(error);

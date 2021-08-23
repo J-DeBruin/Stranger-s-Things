@@ -42,3 +42,7 @@ div main {
   margin: 0.1em 1em;
   /* font-size: 4em; */
 }
+
+.post {
+  border-bottom: solid;
+}

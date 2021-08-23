@@ -11,6 +11,7 @@ import Login from './components/Login';
 import Posts from './components/Posts';
 import Header from './components/Header';
 import Register from './components/Register2';
+import AddPost from './components/AddPost';
 import TokenUtilities from './utilities/token';
 
 const user = {
@@ -60,7 +61,8 @@ const App = () => {
             <Route exact path="/Login"><Login setToken={setToken} /></Route>
             <Route exact path="/Register2"><Register setToken={setToken} /></Route>      
             <Route exact path="/Posts"><Posts /></Route>
-            <Route exact path="/Home"><Home /></Route>     
+            <Route exact path="/Home"><Home /></Route>
+            <Route exact path="/Posts/Add"><AddPost /></Route>   
             {/* <Route path="/Profile"><Profile /></Route>
                     <h1>Profile</h1> */}                  
             </Switch>

@@ -36,6 +36,8 @@ const Header = ({isLoggedIn, setToken}) => {
                         <button onClick={handleLogout}>Logout</button>
                     </nav> :
                     <nav className="navbar">
+                        <Link to="/Home">Home</Link>
+                        <Link to="/Posts">Posts</Link>
                         <Link to="/Login">
                             <button>Log in</button>
                         </Link>
